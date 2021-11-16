@@ -17,6 +17,11 @@
 #include "logic/Automation1.hpp"
 #include "logic/AutomationTypes.hpp"
 
+/** @file
+ * @brief Brief description of file
+ * Detailed description of file 
+ * 
+ * */
 
 rclcpp::Node::SharedPtr nodeHandle;
 
@@ -40,6 +45,10 @@ std::shared_ptr<rclcpp::Publisher<std_msgs::msg::Float32_<std::allocator<void> >
 std::shared_ptr<rclcpp::Publisher<std_msgs::msg::Float32_<std::allocator<void> >, std::allocator<void> > > excavationAugerPublisher;
 std::shared_ptr<rclcpp::Publisher<std_msgs::msg::Float32_<std::allocator<void> >, std::allocator<void> > > excavationAnglePublisher;
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * @return void
+ * */
 void updateSpeed(){
     
     std_msgs::msg::Float32 speedLeft;
@@ -60,7 +69,11 @@ void updateSpeed(){
     driveRightSpeedPublisher->publish(speedRight);
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param axisState
+ * @return void
+ * */
 void joystickAxisCallback(const messages::msg::AxisState::SharedPtr axisState){
     RCLCPP_INFO(nodeHandle->get_logger(),"Button %d %d %f", axisState->joystick, axisState->axis, axisState->state);
     float deadZone = 0.1;
@@ -88,7 +101,11 @@ void joystickAxisCallback(const messages::msg::AxisState::SharedPtr axisState){
     }
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param buttonState
+ * @return void
+ * */
 void joystickButtonCallback(const messages::msg::ButtonState::SharedPtr buttonState){
     std::cout << "Button " << buttonState->joystick << " " << buttonState->button << " " << buttonState->state << std::endl;
     std_msgs::msg::Bool but7;
@@ -154,11 +171,20 @@ void joystickButtonCallback(const messages::msg::ButtonState::SharedPtr buttonSt
     }
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param hatState
+ * @return void
+ * */
 void joystickHatCallback(const messages::msg::HatState::SharedPtr hatState){
     std::cout << "Hat " << hatState->joystick << " " << hatState->hat << " " << hatState->state << std::endl;
 }
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param keyState
+ * @return void
+ * */
 void keyCallback(const messages::msg::KeyState::SharedPtr keyState){
     std::cout << "Key " << keyState->key << " " << keyState->state << std::endl;
 
@@ -167,6 +193,11 @@ void keyCallback(const messages::msg::KeyState::SharedPtr keyState){
     }
 }
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param zedPosition
+ * @return void
+ * */
 void zedPositionCallback(const messages::msg::ZedPosition::SharedPtr zedPosition){
     Position position;
     position.x=zedPosition->x;	

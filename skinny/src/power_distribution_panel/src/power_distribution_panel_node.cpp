@@ -18,7 +18,15 @@
 #include "power_distribution_panel/PowerDistributionPanel.hpp"
 #include "messages/msg/power.hpp"
 
+/** @file
+ * @brief Brief description of file
+ * Detailed description of file 
+ * 
+ * */
 
+/** @brief
+ * 
+ * */
 int main(int argc, char **argv){
 
 	rclcpp::init(argc,argv);

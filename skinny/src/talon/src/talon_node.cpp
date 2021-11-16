@@ -40,14 +40,32 @@ using namespace ctre::phoenix::platform;
 using namespace ctre::phoenix::motorcontrol;
 using namespace ctre::phoenix::motorcontrol::can;
 
+/** @file
+ * @brief Brief description of file
+ * Detailed description of file 
+ * 
+ * */
+
 
 rclcpp::Node::SharedPtr nodeHandle;
 //bool GO=false;
 bool GO = true;
+
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param empty
+ * @return void
+ * */
 void stopCallback(std_msgs::msg::Empty::SharedPtr empty){
 	RCLCPP_INFO(nodeHandle->get_logger(),"STOP");
 	GO=false;
 } 
+
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param empty
+ * @return void
+ * */
 void goCallback(std_msgs::msg::Empty::SharedPtr empty){
 	RCLCPP_INFO(nodeHandle->get_logger(),"GO");
 	GO=true;
@@ -57,6 +75,12 @@ bool useVelocity=false;
 int velocityMultiplier=0;
 int testSpeed=0;
 TalonSRX* talonSRX;
+
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param speed
+ * @return void
+ * */
 void speedCallback(const std_msgs::msg::Float32::SharedPtr speed){
 //	RCLCPP_INFO(nodeHandle->get_logger(),"---------->>> %f ", speed->data);
 	//std::cout << "---------->>>  " << speed->data << std::endl;

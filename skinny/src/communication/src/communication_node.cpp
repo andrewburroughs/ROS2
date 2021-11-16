@@ -30,9 +30,20 @@
 
 #define PORT 31337
 
+/** @file
+ * @brief Brief description of file
+ * Detailed description of file 
+ * 
+ * */
+
 std_msgs::msg::Empty empty;
 bool silentRunning=true;
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param array
+ * @return void
+ * */
 void insert(float value,uint8_t* array){
     array[0]=uint8_t((uint32_t(*(static_cast<uint32_t*>(static_cast<void*>(&value))))>>24) & 0xff);
     array[1]=uint8_t((uint32_t(*(static_cast<uint32_t*>(static_cast<void*>(&value))))>>16) & 0xff);
@@ -40,7 +51,11 @@ void insert(float value,uint8_t* array){
     array[3]=uint8_t((uint32_t(*(static_cast<uint32_t*>(static_cast<void*>(&value))))>>0) & 0xff);
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param array
+ * @return void
+ * */
 void insert(int value,uint8_t* array){
     array[0]=uint8_t((uint32_t(*(static_cast<uint32_t*>(static_cast<void*>(&value))))>>24) & 0xff);
     array[1]=uint8_t((uint32_t(*(static_cast<uint32_t*>(static_cast<void*>(&value))))>>16) & 0xff);
@@ -48,7 +63,11 @@ void insert(int value,uint8_t* array){
     array[3]=uint8_t((uint32_t(*(static_cast<uint32_t*>(static_cast<void*>(&value))))>>0) & 0xff);
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param array
+ * @return value
+ * */
 float parseFloat(uint8_t* array){
     uint32_t axisYInteger=0;
     axisYInteger|=uint32_t(array[0])<<24;    
@@ -60,7 +79,11 @@ float parseFloat(uint8_t* array){
     return value;
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param array
+ * @return value
+ * */
 int parseInt(uint8_t* array){
     uint32_t axisYInteger=0;
     axisYInteger|=uint32_t(array[0])<<24;    
@@ -74,6 +97,11 @@ int parseInt(uint8_t* array){
 
  
 int new_socket;
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param power
+ * @return void
+ * */
 void powerCallback(const messages::msg::Power::SharedPtr power){
 //    std::cout << "power " << power->voltage << std::endl;
     if(silentRunning)return;
@@ -104,7 +132,11 @@ void powerCallback(const messages::msg::Power::SharedPtr power){
     send(new_socket, message, messageSize, 0);
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param talonOut
+ * @return void
+ * */
 void talon1Callback(const messages::msg::TalonOut::SharedPtr talonOut){
 //std::cout << "talon1Callback" << std::endl;    
     if(silentRunning)return;
@@ -129,7 +161,11 @@ void talon1Callback(const messages::msg::TalonOut::SharedPtr talonOut){
     send(new_socket, message, messageSize, 0);
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param talonOut
+ * @return void
+ * */
 void talon2Callback(const messages::msg::TalonOut::SharedPtr talonOut){
     if(silentRunning)return;
     int messageSize=11*4+2;
@@ -153,7 +189,11 @@ void talon2Callback(const messages::msg::TalonOut::SharedPtr talonOut){
     send(new_socket, message, messageSize, 0);
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param victorOut
+ * @return void
+ * */
 void victor1Callback(const messages::msg::VictorOut::SharedPtr victorOut){
     if(silentRunning)return;
     int messageSize=11*4+2;
@@ -170,7 +210,11 @@ void victor1Callback(const messages::msg::VictorOut::SharedPtr victorOut){
     send(new_socket, message, messageSize, 0);
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param victorOut
+ * @return void
+ * */
 void victor2Callback(const messages::msg::VictorOut::SharedPtr victorOut){
     if(silentRunning)return;
     int messageSize=11*4+2;
@@ -187,7 +231,11 @@ void victor2Callback(const messages::msg::VictorOut::SharedPtr victorOut){
     send(new_socket, message, messageSize, 0);
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param victorOut
+ * @return void
+ * */
 void victor3Callback(const messages::msg::VictorOut::SharedPtr victorOut){
     if(silentRunning)return;
     int messageSize=11*4+2;
@@ -206,6 +254,11 @@ void victor3Callback(const messages::msg::VictorOut::SharedPtr victorOut){
 
 
 uint8_t driveState=1;
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param state
+ * @return void
+ * */
 void driveStateCallback(const std_msgs::msg::Bool::SharedPtr state){
     int messageSize=3;
     uint8_t message[3];
@@ -217,7 +270,9 @@ void driveStateCallback(const std_msgs::msg::Bool::SharedPtr state){
     send(new_socket, message, messageSize, 0);
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * */
 void sendRobotState() {
     int messageSize = 3;
     uint8_t message[3];
@@ -228,7 +283,12 @@ void sendRobotState() {
     send(new_socket, message, messageSize, 0);
 }
 
-
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param family
+ * @param interfaceName
+ * @return addressString
+ * */
 std::string getAddressString(int family, std::string interfaceName){
     std::string addressString("");
     ifaddrs* interfaceAddresses = nullptr;
@@ -263,6 +323,9 @@ std::string getAddressString(int family, std::string interfaceName){
 }
 
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * */
 void printAddresses() {
     printf("Addresses\n");
     ifaddrs* interfaceAddresses = nullptr;
@@ -301,6 +364,9 @@ void printAddresses() {
     printf("Done\n");
 }
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * */
 void reboot(){
     sync();
     reboot(LINUX_REBOOT_CMD_POWER_OFF);
@@ -308,6 +374,9 @@ void reboot(){
 
 std::string robotName="unnamed";
 bool broadcast=true;
+/** @brief Brief description of function
+ * Detailed description of function
+ * */
 void broadcastIP(){
     while(true){
         if(broadcast){

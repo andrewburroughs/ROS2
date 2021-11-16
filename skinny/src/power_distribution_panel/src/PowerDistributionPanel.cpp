@@ -3,32 +3,71 @@
 #include <ncurses.h>
 #include <iostream>
 
+/** @file
+ * @brief Brief description of file
+ * Detailed description of file 
+ * 
+ * */
+
 // This is hardcoded to a power panel at id 1   Sad!!!
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * */
 PowerDistributionPanel::PowerDistributionPanel(){
 	this->voltage=0;
 }
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param source
+ * @return currentC[source]
+ * */
 float PowerDistributionPanel::getCurrent(int source){
 	return currentC[source];
 }
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param source
+ * @return currentA[source]
+ * */
 float PowerDistributionPanel::getCurrentA(int source){
 	return currentA[source];
 }
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param source
+ * @return currentB[source]
+ * */
 float PowerDistributionPanel::getCurrentB(int source){
 	return currentB[source];
 }
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param source
+ * @return currentC[source]
+ * */
 float PowerDistributionPanel::getCurrentC(int source){
 	return currentC[source];
 }
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param source
+ * @return voltage
+ * */
 float PowerDistributionPanel::getVoltage(){
 	return voltage;
 }
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param frame
+ * @return void
+ * */
 void PowerDistributionPanel::parseFrame(struct can_frame frame){
 
         if(frame.can_id==0x88041481 || frame.can_id==0x88041541 || frame.can_id==0x88041601){
@@ -51,12 +90,22 @@ void PowerDistributionPanel::parseFrame(struct can_frame frame){
 	}
 }
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param frame
+ * @return void
+ * */
 void PowerDistributionPanel::parseVoltage(struct can_frame frame){
 	if(frame.can_id==0x88041481 || frame.can_id==0x88041541 || frame.can_id==0x88041601){
 		this->voltage=.05*frame.data[6]+4;
         }
 }
 
+/** @brief Brief description of function
+ * Detailed description of function
+ * @param frame
+ * @return void
+ * */
 void PowerDistributionPanel::parseCurrent(struct can_frame frame){
         float currentScalar = 0.125f;
         int i1=frame.data[0];

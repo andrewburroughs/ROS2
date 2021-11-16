@@ -10,6 +10,12 @@
 //using namespace sl;
 //using namespace std;
 
+/** @file
+ * @brief Brief description of file
+ * Detailed description of file 
+ * 
+ * */
+
 int main(int argc, char **argv) {
     rclcpp::init(argc,argv);
     rclcpp::Node::SharedPtr nodeHandle = rclcpp::Node::make_shared("zed_tracking");

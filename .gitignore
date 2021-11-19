@@ -5,3 +5,11 @@ skinny/src/zed_tracking/src/install
 skinny/src/zed_tracking/src/log
 latex
 html
+skinny/src/build
+skinny/src/install
+skinny/src/log
+skinny/src/logic/src/build/
+skinny/src/logic/src/install/
+skinny/build/
+skinny/install/
+skinny/src/logic/src/log/

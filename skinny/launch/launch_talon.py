@@ -11,6 +11,7 @@ def generate_launch_description():
             node_executable='talon_node',
             parameters=[
                 {"motor_number": 10},
+                {"diagnostics_port": 72340},
                 {"invert_motor": True},
                 {"speed_topic": "drive_left_speed"},
                 {"info_topic": "talon_10_info"},

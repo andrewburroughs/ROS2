@@ -32,6 +32,8 @@
 #include <ctre/Phoenix.h>
 #include <ctre/phoenix/platform/Platform.h>
 #include <ctre/phoenix/unmanaged/Unmanaged.h>
+#include <ctre/phoenix/cci/Unmanaged_CCI.h>
+#include <ctre/phoenix/cci/Diagnostics_CCI.h>
 
 #include "messages/msg/talon_out.hpp"
 
@@ -108,6 +110,14 @@ int main(int argc,char** argv){
 	int motorNumber = motorNumberParameter.as_int();
 	std::cout << "motor_number: " << motorNumber << std::endl;
 	RCLCPP_INFO(nodeHandle->get_logger(),"motorNumber: %d", motorNumber);
+	
+	nodeHandle->declare_parameter<int>("diagnostics_port",1);
+	rclcpp::Parameter portNumberParameter = nodeHandle->get_parameter("diagnostics_port");
+	int portNumber = portNumberParameter.as_int();
+	std::cout << "diagnostics_port: " << portNumber <<std::endl;
+	RCLCPP_INFO(nodeHandle->get_logger(), "diagnosticsPort: %d", portNumber);
+	//c_SetPhoenixDiagnosticsStartTime(-1); //Disables the Phoenix Diagnostics server, but does not allow the Talons to run
+	c_Phoenix_Diagnostics_Create1(portNumber);  //Creates a Phoenix Diagnostics server with the port specified
 	
 	//std::string infoTopic;
 	//success=nodeHandleP.getParam("info_topic", infoTopic);

@@ -14,3 +14,4 @@ skinny/build/
 skinny/install/
 skinny/src/logic/src/log/
 skinny/launch/__pycache__
+skinny/run.sh

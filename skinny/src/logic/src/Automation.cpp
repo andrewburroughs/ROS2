@@ -1,4 +1,3 @@
-
 #include <cmath>
 
 #include <rclcpp/rclcpp.hpp>
@@ -7,6 +6,9 @@
 #include "logic/Automation.hpp"
 #include "logic/AutomationTypes.hpp"
 
+/** @file
+ * 
+ * */
 
 void Automation::setNode(rclcpp::Node::SharedPtr node){
     this->node=node;
@@ -59,4 +61,3 @@ EulerAngles Automation::toEulerAngles(Quaternion q) {
 
     return angles;
 }
-

@@ -18,8 +18,27 @@
 #include "logic/AutomationTypes.hpp"
 
 /** @file
- * @brief Brief description of file
- * Detailed description of file 
+ * @brief Node handling logic for robot
+ * 
+ * This node receives information published by the communication node,
+ * wraps the information into topics, then publishes the topics.  
+ * The topics that the node subscribes to are as follows:
+ * \li \b joystick_axis
+ * \li \b joystick_button
+ * \li \b joystick_hat
+ * \li \b key
+ * \li \b zed_position
+ * 
+ * To read more about the communication node
+ * \see communication_node.cpp
+ * 
+ * The topics that are being published are as follows:
+ * \li \b drive_left_speed
+ * \li \b drive_right_speed
+ * \li \b drive_state
+ * 
+ * To read more about the nodes that subscribe to this one
+ * \see talon_node.cpp
  * 
  * */
 
@@ -29,10 +48,6 @@ float joystick1Roll=0;
 float joystick1Pitch=0;
 float joystick1Yaw=0;
 float joystick1Throttle=1;
-float excavationElevation = 0;
-float excavationAuger = 0;
-float excavationAngle = 0;
-bool reverseAuger = false;
 
 bool automationGo=false;
 
@@ -41,19 +56,20 @@ Automation* automation=new Automation1();
 std::shared_ptr<rclcpp::Publisher<std_msgs::msg::Float32_<std::allocator<void> >, std::allocator<void> > > driveLeftSpeedPublisher;
 std::shared_ptr<rclcpp::Publisher<std_msgs::msg::Float32_<std::allocator<void> >, std::allocator<void> > > driveRightSpeedPublisher;
 std::shared_ptr<rclcpp::Publisher<std_msgs::msg::Bool_<std::allocator<void> >, std::allocator<void> > > driveStatePublisher;
-std::shared_ptr<rclcpp::Publisher<std_msgs::msg::Float32_<std::allocator<void> >, std::allocator<void> > > excavationElevationPublisher;
-std::shared_ptr<rclcpp::Publisher<std_msgs::msg::Float32_<std::allocator<void> >, std::allocator<void> > > excavationAugerPublisher;
-std::shared_ptr<rclcpp::Publisher<std_msgs::msg::Float32_<std::allocator<void> >, std::allocator<void> > > excavationAnglePublisher;
 
-/** @brief Brief description of function
- * Detailed description of function
+/** @brief Function to update speed of the wheels
+ * 
+ * This function is called by the joystickAxisCallback
+ * to update the speed to the wheels.  It uses the data 
+ * published to compute the speed of the wheels based on
+ * the joystick information and limited by the maxSpeed.
  * @return void
  * */
 void updateSpeed(){
     
     std_msgs::msg::Float32 speedLeft;
     std_msgs::msg::Float32 speedRight;
-    float maxSpeed = 0.6;
+    float maxSpeed = 0.4;
     
     //Linear transformation of cordinate planes
     speedLeft.data  = (joystick1Pitch + joystick1Roll);
@@ -69,9 +85,13 @@ void updateSpeed(){
     driveRightSpeedPublisher->publish(speedRight);
 }
 
-/** @brief Brief description of function
- * Detailed description of function
- * @param axisState
+/** @brief Callback function for joystick axis topic
+ * 
+ * This function is called when the node receives the
+ * topic joystick_axis, then converts the joystick
+ * input using a series of linear transformations 
+ * before calling UpdateSpeed()
+ * @param axisState \see AxisState.msg
  * @return void
  * */
 void joystickAxisCallback(const messages::msg::AxisState::SharedPtr axisState){
@@ -93,26 +113,19 @@ void joystickAxisCallback(const messages::msg::AxisState::SharedPtr axisState){
     }else if(axisState->axis==2){
         joystick1Yaw = axisState->state;
     }else if(axisState->axis==3){
-        joystick1Throttle = axisState->state/2+0.5;
-        float augerSpeed = (reverseAuger)? -joystick1Throttle : joystick1Throttle;
-        std::cout << "auger speed: " << augerSpeed << std::endl;
-        auger.data = augerSpeed;
-        excavationAugerPublisher->publish(auger);
     }
 }
 
-/** @brief Brief description of function
- * Detailed description of function
- * @param buttonState
+/** @brief Callback function for joystick buttons
+ * 
+ * This function is called when the node receives a
+ * topic with the name joystick_button.  It currently
+ * prints the button pressed to the screen.
+ * @param buttonState \see ButtonState.msg
  * @return void
  * */
 void joystickButtonCallback(const messages::msg::ButtonState::SharedPtr buttonState){
     std::cout << "Button " << buttonState->joystick << " " << buttonState->button << " " << buttonState->state << std::endl;
-    std_msgs::msg::Bool but7;
-    std_msgs::msg::Bool but8;
-    std_msgs::msg::Bool driveState;
-    std_msgs::msg::Float32 elevation;
-    std_msgs::msg::Float32 angle;
 
     switch (buttonState->button) {
 
@@ -139,50 +152,39 @@ void joystickButtonCallback(const messages::msg::ButtonState::SharedPtr buttonSt
             }
             break;
         case 6: 
-            reverseAuger = true;
             break;
         case 7:
-            reverseAuger = false;
             break;
         case 8:
-            excavationAngle += 50;
-            angle.data = excavationAngle;
-            std::cout << "excavationAngle: " << excavationAngle << std::endl;
-            excavationAnglePublisher->publish(angle);
             break;
         case 9:
-            excavationAngle -= 50;
-            angle.data = excavationAngle;
-            std::cout << "excavationAngle: " << excavationAngle << std::endl;
-            excavationAnglePublisher->publish(angle);
             break;
         case 10:
-            excavationElevation += 50;
-            elevation.data = excavationElevation;
-            std::cout << "excavationElevation: " << excavationElevation << std::endl;
-            excavationElevationPublisher->publish(elevation);
             break;
         case 11:
-            excavationElevation -= 50;
-            elevation.data = excavationElevation;
-            std::cout << "excavationElevation: " << excavationElevation << std::endl;
-            excavationElevationPublisher->publish(elevation);
             break;
     }
 }
 
-/** @brief Brief description of function
- * Detailed description of function
- * @param hatState
+/** @brief Callback function for joystick hat
+ * 
+ * This function is called when the node receives a
+ * topic with the name joystick_hat.  It currently
+ * prints the hat state to the screen.
+ * @param hatState \see HatState.msg
  * @return void
  * */
 void joystickHatCallback(const messages::msg::HatState::SharedPtr hatState){
     std::cout << "Hat " << hatState->joystick << " " << hatState->hat << " " << hatState->state << std::endl;
 }
 
-/** @brief Brief description of function
- * Detailed description of function
- * @param keyState
+/** @brief Callback function for the keys
+ * 
+ * This function is called when the node receives a
+ * topic with the name key_state.  It currently prints
+ * the key pressed to the screen and inverts  
+ * @arg automationGo if the key is 's'.
+ * @param keyState \see KeyState.msg
  * @return void
  * */
 void keyCallback(const messages::msg::KeyState::SharedPtr keyState){
@@ -193,9 +195,14 @@ void keyCallback(const messages::msg::KeyState::SharedPtr keyState){
     }
 }
 
-/** @brief Brief description of function
- * Detailed description of function
- * @param zedPosition
+/** @brief Callback function for the zedPosition
+ * 
+ * This function is caled when the node receives a
+ * topic with the name zed_position.  This function
+ * extracts the information and calls the setPosition
+ * function from the automation problem.  
+ * \see .Automation.cpp
+ * @param zedPosition \see ZedPosition.msg
  * @return void
  * */
 void zedPositionCallback(const messages::msg::ZedPosition::SharedPtr zedPosition){
@@ -226,9 +233,6 @@ int main(int argc, char **argv){
     driveLeftSpeedPublisher= nodeHandle->create_publisher<std_msgs::msg::Float32>("drive_left_speed",1);
     driveRightSpeedPublisher= nodeHandle->create_publisher<std_msgs::msg::Float32>("drive_right_speed",1);
     driveStatePublisher= nodeHandle->create_publisher<std_msgs::msg::Bool>("drive_state",1);
-    excavationElevationPublisher = nodeHandle->create_publisher<std_msgs::msg::Float32>("excavationElevation",1);
-    excavationAugerPublisher = nodeHandle->create_publisher<std_msgs::msg::Float32>("excavationAuger",1);
-    excavationAnglePublisher = nodeHandle->create_publisher<std_msgs::msg::Float32>("excavationAngle",1);
 
     rclcpp::Rate rate(20);
 

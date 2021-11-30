@@ -12,6 +12,7 @@
 
 /** @file
  * @brief Brief description of file
+ * 
  * Detailed description of file 
  * 
  * */

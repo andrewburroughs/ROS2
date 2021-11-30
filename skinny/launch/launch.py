@@ -1,6 +1,10 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
 
+## @file
+# Launch file that contains all the nodes necessary
+# to run the robot
+
 def generate_launch_description():
     return LaunchDescription([
         Node(

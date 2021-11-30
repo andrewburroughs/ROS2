@@ -43,8 +43,30 @@ using namespace ctre::phoenix::motorcontrol;
 using namespace ctre::phoenix::motorcontrol::can;
 
 /** @file
- * @brief Brief description of file
- * Detailed description of file 
+ * @brief Node controlling one Talon motor 
+ * 
+ * This node receives information published by the logic node,
+ * then transforms the data received into movement by the motor
+ * controlled by the Talon instance.  The topics that the node
+ * subscribes to are as follows:
+ * \li \b speed_topic
+ * \li \b STOP
+ * \li \b GO
+ * 
+ * The \b speed_topic topic is either \b drive_left_speed
+ * or \b drive_right_speed as defined in the parameters set in
+ * the launch file.  To read more about the logic node or the
+ * launch file
+ * \see logic_node.cpp
+ * \see launch.py
+ * 
+ * The topics being published are as follows:
+ * \li \b info_topic
+ * 
+ * This string has the general form talon_{motorNumber}_info and
+ * is defined by the user in the launch file.  To read more about
+ * the launch file,
+ * \see launch.py
  * 
  * */
 
@@ -53,8 +75,12 @@ rclcpp::Node::SharedPtr nodeHandle;
 //bool GO=false;
 bool GO = true;
 
-/** @brief Brief description of function
- * Detailed description of function
+/** @brief STOP Callback
+ * 
+ * Callback function triggered when the node receives
+ * a topic with the topic name of STOP.  This function
+ * sets a boolean value GO to false, which prevents the
+ * robot from moving.
  * @param empty
  * @return void
  * */
@@ -63,8 +89,12 @@ void stopCallback(std_msgs::msg::Empty::SharedPtr empty){
 	GO=false;
 } 
 
-/** @brief Brief description of function
- * Detailed description of function
+/** @brief GO Callback
+ * 
+ * Callback function triggered when the node receives
+ * a topic with the topic name of GO.  This function
+ * sets a boolean value GO to true, which allows the
+ * robot to drive.
  * @param empty
  * @return void
  * */
@@ -78,8 +108,13 @@ int velocityMultiplier=0;
 int testSpeed=0;
 TalonSRX* talonSRX;
 
-/** @brief Brief description of function
- * Detailed description of function
+/** @brief Speed Callback Function
+ * 
+ * Callback function triggered when the node receives
+ * a topic with the topic name of drive_left_speed or
+ * drive_right_speed.  This function takes the data
+ * from the topic and sets the motor to the speed
+ * specified.
  * @param speed
  * @return void
  * */

@@ -19,14 +19,18 @@
 #include "messages/msg/power.hpp"
 
 /** @file
- * @brief Brief description of file
- * Detailed description of file 
+ * @brief Node publishing Power Distribution Panel info
+ * 
+ * This node does not listen for any topics to be published.
+ * Instead, this node queries the PDP and then packages the
+ * information it recieves into  one topic, which is
+ * \li \b power
+ * 
+ * To read more about the functions that this makes use of,
+ * \see PowerDistributionPanel.cpp
  * 
  * */
 
-/** @brief
- * 
- * */
 int main(int argc, char **argv){
 
 	rclcpp::init(argc,argv);

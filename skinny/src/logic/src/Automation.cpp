@@ -5,7 +5,6 @@
 #include "logic/AutomationTypes.hpp"
 
 /** @file
- *
  * @brief Defines functions used in Automation.hpp and AutomationTypes.hpp
  * 
  * These functions are used to calculate wheel speed and three dimensional positioning of the bot.

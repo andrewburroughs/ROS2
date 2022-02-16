@@ -9,6 +9,11 @@
  * @brief Defines functions used in Automation.hpp and AutomationTypes.hpp
  * 
  * These functions are used to calculate wheel speed and three dimensional positioning of the bot.
+ * 
+ * The topics that this node publishes are as follows:
+ * \li \b drive_left_speed
+ * \li \b drive_right_speed
+ * 
  * */
  
 /** @brief Sets publisher node for left and right wheel motor speed

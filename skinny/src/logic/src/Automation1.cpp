@@ -8,10 +8,19 @@
  *
  * @brief Defines functions used in Automation1.hpp
  * 
+ * This node does not publish any information directly, instead using the
+ * Automation.cpp file to publish the data.  To read more about this file,
+ * \see Automation.cpp.
+ * 
+ * */
+
+/** @brief Runs basic autonomy program for robot
+ * 
  * This function sets the wheel speed and spins to the right until the camera
  * sees the Aruco marker, then drives forward until the robot is less than a
  * meter away from the marker.
- * */
+ * @return void
+* */
 
 void Automation1::automate(){
     if(robotState==LOCATE){
@@ -35,18 +44,18 @@ void Automation1::automate(){
         double yaw = yawRadians * 180/M_PI;
         double deltaYaw = theta-yaw;
         double yawTolerance=5;
-    if(deltaYaw > yawTolerance){
-        changeSpeed(-0.15,0.15);
-    }else if (deltaYaw < yawTolerance){
-        changeSpeed(0.15,-0.15);
-    }else{
-         changeSpeed(0.15 - 0.1*deltaYaw/yawTolerance,0.15 + 0.1*deltaYaw/yawTolerance);
-    }
-    std::cout << orientation.roll*180/M_PI << ", " << orientation.pitch*180/M_PI << ", " << orientation.yaw*180/ M_PI << "   "
-              << "   \t" << position.x << "  " << position.y << "  " << position.z
-              << "   \t" << position.ox << "  " << position.oy << "  " << position.oz << "  " << position.ow
-              << "   \t" << facingUnitX << " " << facingUnitZ << "   " << yaw << " " << deltaYaw << " " << theta
-              << "   \t" << position.arucoVisible << std::endl;
+        if(deltaYaw > yawTolerance){
+            changeSpeed(-0.15,0.15);
+        }else if (deltaYaw < yawTolerance){
+            changeSpeed(0.15,-0.15);
+        }else{
+            changeSpeed(0.15 - 0.1*deltaYaw/yawTolerance,0.15 + 0.1*deltaYaw/yawTolerance);
+        }
+        std::cout << orientation.roll*180/M_PI << ", " << orientation.pitch*180/M_PI << ", " << orientation.yaw*180/ M_PI << "   "
+                << "   \t" << position.x << "  " << position.y << "  " << position.z
+                << "   \t" << position.ox << "  " << position.oy << "  " << position.oz << "  " << position.ow
+                << "   \t" << facingUnitX << " " << facingUnitZ << "   " << yaw << " " << deltaYaw << " " << theta
+                << "   \t" << position.arucoVisible << std::endl;
     }else{
         changeSpeed(0,0);
     }

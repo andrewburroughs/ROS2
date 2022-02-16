@@ -5,7 +5,6 @@
 #include "logic/Automation1.hpp"
 
 /** @file
- *
  * @brief Defines functions used in Automation1.hpp
  * 
  * This node does not publish any information directly, instead using the

@@ -11,13 +11,13 @@
  *
  * */
 
+void Automation::setNode(rclcpp::Node::SharedPtr node){
 /** @brief Sets publisher node for left and right wheel motor speed
  * 
  * This function sets the driveLeftSpeedPublisher and driveRightSpeedPublisher.
  * @param rclcpp::Node::SharedPtr node
  * @return void
  * */
-void Automation::setNode(rclcpp::Node::SharedPtr node){
     this->node=node;
     driveLeftSpeedPublisher= this->node->create_publisher<std_msgs::msg::Float32>("drive_left_speed",1);
     driveRightSpeedPublisher= this->node->create_publisher<std_msgs::msg::Float32>("drive_right_speed",1);
@@ -40,13 +40,14 @@ void Automation::setPosition(Position position){
     this->orientation=toEulerAngles(this->orientationQuaternion);
 }
 
+
+void Automation::changeSpeed(float left, float right){
 /** @brief Assigns/publishes left/right motorspeeds
  * 
  * This function assigns the speed of the left and right motors and then publishes them.
  * @param left, right
  * @return void
  * */
-void Automation::changeSpeed(float left, float right){
     if(currentLeftSpeed==left && currentRightSpeed==right) return;
     currentLeftSpeed=left;
     currentRightSpeed=right;

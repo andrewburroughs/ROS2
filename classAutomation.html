@@ -96,13 +96,11 @@ Public Member Functions</h2></td></tr>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>automate</b> ()=0</td></tr>
 <tr class="separator:a123c8996de1d657d4d96e46aa23be673"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35d610ea56c94a7b96897a54144c0f1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#a35d610ea56c94a7b96897a54144c0f1f">setNode</a> (rclcpp::Node::SharedPtr node)</td></tr>
-<tr class="memdesc:a35d610ea56c94a7b96897a54144c0f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets publisher node for left and right wheel motor speed.  <a href="classAutomation.html#a35d610ea56c94a7b96897a54144c0f1f">More...</a><br /></td></tr>
 <tr class="separator:a35d610ea56c94a7b96897a54144c0f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad216c05e7a24f9a7dc9216f5ffee173f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#ad216c05e7a24f9a7dc9216f5ffee173f">setPosition</a> (<a class="el" href="structPosition.html">Position</a> position)</td></tr>
 <tr class="memdesc:ad216c05e7a24f9a7dc9216f5ffee173f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets axis orientations and calls <a class="el" href="structEulerAngles.html">EulerAngles</a>.  <a href="classAutomation.html#ad216c05e7a24f9a7dc9216f5ffee173f">More...</a><br /></td></tr>
 <tr class="separator:ad216c05e7a24f9a7dc9216f5ffee173f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ee08cd555d8e86e37275ac28799b417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#a9ee08cd555d8e86e37275ac28799b417">changeSpeed</a> (float left, float right)</td></tr>
-<tr class="memdesc:a9ee08cd555d8e86e37275ac28799b417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns/publishes left/right motorspeeds.  <a href="classAutomation.html#a9ee08cd555d8e86e37275ac28799b417">More...</a><br /></td></tr>
 <tr class="separator:a9ee08cd555d8e86e37275ac28799b417"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b45d73f58858dab802c413018f378c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEulerAngles.html">EulerAngles</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#a5b45d73f58858dab802c413018f378c1">toEulerAngles</a> (<a class="el" href="structQuaternion.html">Quaternion</a> q)</td></tr>
 <tr class="memdesc:a5b45d73f58858dab802c413018f378c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts raw x,y,z-axis data to Euler angles to orient the bot in 3d space.  <a href="classAutomation.html#a5b45d73f58858dab802c413018f378c1">More...</a><br /></td></tr>
@@ -161,15 +159,14 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>currentRightSpeed</b
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Assigns/publishes left/right motorspeeds. </p>
+<p >Assigns/publishes left/right motorspeeds</p>
 <p >This function assigns the speed of the left and right motors and then publishes them. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">left,right</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
 
 </div>
 </div>
@@ -188,15 +185,14 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>currentRightSpeed</b
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Sets publisher node for left and right wheel motor speed. </p>
+<p >Sets publisher node for left and right wheel motor speed</p>
 <p >This function sets the driveLeftSpeedPublisher and driveRightSpeedPublisher. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rclcpp::Node::SharedPtr</td><td>node </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
 
 </div>
 </div>

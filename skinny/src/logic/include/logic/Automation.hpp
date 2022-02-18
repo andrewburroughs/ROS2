@@ -5,7 +5,7 @@
 
 #include "AutomationTypes.hpp"
 
-/** @class
+/** @file
  *
  *  @brief Header file for Automation
  * 

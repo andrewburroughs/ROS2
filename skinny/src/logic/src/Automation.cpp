@@ -10,6 +10,7 @@
  * 
  * These functions are used to calculate wheel speed and three dimensional positioning of the bot.
  * */
+ int i = 0;
  
 /** @brief Sets publisher node for left and right wheel motor speed
  * 

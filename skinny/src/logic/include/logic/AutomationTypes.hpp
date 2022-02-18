@@ -1,7 +1,6 @@
 #pragma once
 
 /** @file
- *
  *  @brief Header file for AutomationTypes
  * 
  * */

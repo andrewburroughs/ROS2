@@ -2,7 +2,7 @@
 
 #include "Automation.hpp"
 
-/** @file
+/** @class Automation1
  *
  *  @brief Header file for Automation
  * 

@@ -64,12 +64,12 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classPowerDistributionPanel-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">PowerDistributionPanel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="PowerDistributionPanel_8hpp_source.html">PowerDistributionPanel.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -94,7 +94,69 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4b8db8aeb85b455da984cde08e98da9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPowerDistributionPanel.html#a4b8db8aeb85b455da984cde08e98da9b">parseCurrent</a> (struct can_frame frame)</td></tr>
 <tr class="memdesc:a4b8db8aeb85b455da984cde08e98da9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proceses and sets the current for the PDP class Does a bunch of ugly bitwise manipulations on the frame data to get the current and then sets the corresponding current member variable (A, B, or C)  <a href="classPowerDistributionPanel.html#a4b8db8aeb85b455da984cde08e98da9b">More...</a><br /></td></tr>
 <tr class="separator:a4b8db8aeb85b455da984cde08e98da9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:adae6fe5daf0163f37f752138babf68de"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPowerDistributionPanel.html#adae6fe5daf0163f37f752138babf68de">CAN_ID</a> { <br />
+&#160;&#160;<b>id1</b> = 0x88041401
+, <b>id2</b> = 0x88041441
+, <b>id3</b> = 0x88041481
+, <b>id4</b> = 0x880414C1
+, <br />
+&#160;&#160;<b>id5</b> = 0x88041501
+, <b>id6</b> = 0x88041541
+, <b>id7</b> = 0x88041581
+, <b>id8</b> = 0x880415C1
+, <br />
+&#160;&#160;<b>id9</b> = 0x88041601
+, <b>SOMETHING_ELSE</b> = 0x88041641
+, <a class="el" href="classPowerDistributionPanel.html#adae6fe5daf0163f37f752138babf68dea2e765ebf35f0b492884294a28204e0be">UNKNOWN</a> = 0xFFFFFFFF
+<br />
+ }</td></tr>
+<tr class="separator:adae6fe5daf0163f37f752138babf68de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5495253dab31368a59052fc1cdaffdc1"><td class="memItemLeft" align="right" valign="top"><a id="a5495253dab31368a59052fc1cdaffdc1" name="a5495253dab31368a59052fc1cdaffdc1"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>voltage</b> = 0.f</td></tr>
+<tr class="separator:a5495253dab31368a59052fc1cdaffdc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b93b2c9b1b50e6b7c8466636a15e6a5"><td class="memItemLeft" align="right" valign="top"><a id="a2b93b2c9b1b50e6b7c8466636a15e6a5" name="a2b93b2c9b1b50e6b7c8466636a15e6a5"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>currentA</b> [15]</td></tr>
+<tr class="separator:a2b93b2c9b1b50e6b7c8466636a15e6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad54ce7824f14477a0f69f8fe54b96d98"><td class="memItemLeft" align="right" valign="top"><a id="ad54ce7824f14477a0f69f8fe54b96d98" name="ad54ce7824f14477a0f69f8fe54b96d98"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>currentB</b> [15]</td></tr>
+<tr class="separator:ad54ce7824f14477a0f69f8fe54b96d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0929ac4139eda98f358fa6bac5825124"><td class="memItemLeft" align="right" valign="top"><a id="a0929ac4139eda98f358fa6bac5825124" name="a0929ac4139eda98f358fa6bac5825124"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>currentC</b> [15]</td></tr>
+<tr class="separator:a0929ac4139eda98f358fa6bac5825124"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="adae6fe5daf0163f37f752138babf68de" name="adae6fe5daf0163f37f752138babf68de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae6fe5daf0163f37f752138babf68de">&#9670;&nbsp;</a></span>CAN_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classPowerDistributionPanel.html#adae6fe5daf0163f37f752138babf68de">PowerDistributionPanel::CAN_ID</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="adae6fe5daf0163f37f752138babf68dea2e765ebf35f0b492884294a28204e0be" name="adae6fe5daf0163f37f752138babf68dea2e765ebf35f0b492884294a28204e0be"></a>UNKNOWN&#160;</td><td class="fielddoc"><p >&lt;This is pretty much the same as unknown, but different </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2a62d2a9aca9bf110bfa661d3b04a998" name="a2a62d2a9aca9bf110bfa661d3b04a998"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a62d2a9aca9bf110bfa661d3b04a998">&#9670;&nbsp;</a></span>getCurrentA()</h2>

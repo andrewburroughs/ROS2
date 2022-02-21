@@ -4,7 +4,7 @@
 
 /** @class Automation1
  *
- *  @brief Header file for Automation
+ *  @brief Header file for Automation1
  * 
  * */
 

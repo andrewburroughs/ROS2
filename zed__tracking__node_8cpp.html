@@ -96,19 +96,17 @@ Include dependency graph for zed_tracking_node.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ad5240de4b7e12a6f8bc8d6e21f822e16"><td class="memItemLeft" align="right" valign="top"><a id="ad5240de4b7e12a6f8bc8d6e21f822e16" name="ad5240de4b7e12a6f8bc8d6e21f822e16"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ROW_COUNT</b>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:ad5240de4b7e12a6f8bc8d6e21f822e16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zed__tracking__node_8cpp.html#ad5240de4b7e12a6f8bc8d6e21f822e16">ROW_COUNT</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:ad5240de4b7e12a6f8bc8d6e21f822e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top"><a id="a3c04138a5bfe5d72780bb7e82a18e627" name="a3c04138a5bfe5d72780bb7e82a18e627"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char **argv)</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zed__tracking__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Node handling Zed camera. </p>
-<p >This node does not receive any information from other nodes, therefore, it does not subscribe to any node. Current purpose is to utilize the "ArUco Positional Tracking sample" with the Zed camera and publishes topics relating to it. Node contains no other functions, only main. </p><dl class="section see"><dt>See also</dt><dd>aruco.cpp</dd></dl>
+<p >This node does not receive any information from other nodes, therefore, it does not subscribe to any node. Current purpose is to utilize the "ArUco Positional Tracking sample" with the Zed camera and publishes topics relating to it. Node contains no other functions, only main. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="aruco_8cpp.html">aruco.cpp</a></dd></dl>
 <p>The topics that are being published are as follows: </p><ul>
 <li><b>zedPosition</b> "zedPosition" contains the variables x, y, z, ox, oy, oz, ow, and aruco_visible.</li>
 </ul>
@@ -117,8 +115,52 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <p>The variable "aruco_visible" tells whether or not that at least one marker is detected.</p>
 <p >To read more about the nodes that subscribe to this one </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="logic__node_8cpp.html" title="Node handling logic for robot.">logic_node.cpp</a> </dd>
 <dd>
-autonomy_node.cpp </dd></dl>
-</div></div><!-- contents -->
+<a class="el" href="autonomy__node_8cpp.html">autonomy_node.cpp</a> </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ad5240de4b7e12a6f8bc8d6e21f822e16" name="ad5240de4b7e12a6f8bc8d6e21f822e16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5240de4b7e12a6f8bc8d6e21f822e16">&#9670;&nbsp;</a></span>ROW_COUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROW_COUNT&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a3c04138a5bfe5d72780bb7e82a18e627" name="a3c04138a5bfe5d72780bb7e82a18e627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3

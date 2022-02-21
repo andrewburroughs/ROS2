@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['broadcastip_0',['broadcastIP',['../communication__node_8cpp.html#a7b8f256d906f6221368ac0894b5e34cc',1,'communication_node.cpp']]]
+  ['automate_0',['automate',['../classAutomation.html#a123c8996de1d657d4d96e46aa23be673',1,'Automation']]]
 ];

@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>cv</b></li><li class="navelem"><b>aruco</b></li><li class="navelem"><a class="el" href="classcv_1_1aruco_1_1IdentifyCandidatesParallel.html">IdentifyCandidatesParallel</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacecv.html">cv</a></li><li class="navelem"><a class="el" href="namespacecv_1_1aruco.html">aruco</a></li><li class="navelem"><a class="el" href="classcv_1_1aruco_1_1IdentifyCandidatesParallel.html">IdentifyCandidatesParallel</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,17 +93,109 @@ Collaboration diagram for cv::aruco::IdentifyCandidatesParallel:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5ea8eb64c32f52ea3263efe0dff721e1"><td class="memItemLeft" align="right" valign="top"><a id="a5ea8eb64c32f52ea3263efe0dff721e1" name="a5ea8eb64c32f52ea3263efe0dff721e1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>IdentifyCandidatesParallel</b> (const Mat *_grey, InputArrayOfArrays _candidates, InputArrayOfArrays _contours, const Dictionary *_dictionary, vector&lt; int &gt; *_idsTmp, vector&lt; char &gt; *_validCandidates, DetectorParameters *_params)</td></tr>
+<tr class="memitem:a5ea8eb64c32f52ea3263efe0dff721e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcv_1_1aruco_1_1IdentifyCandidatesParallel.html#a5ea8eb64c32f52ea3263efe0dff721e1">IdentifyCandidatesParallel</a> (const Mat *_grey, InputArrayOfArrays _candidates, InputArrayOfArrays _contours, const Dictionary *_dictionary, vector&lt; int &gt; *_idsTmp, vector&lt; char &gt; *_validCandidates, DetectorParameters *_params)</td></tr>
 <tr class="separator:a5ea8eb64c32f52ea3263efe0dff721e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a016854cf78015c0a048f313488fb87a6"><td class="memItemLeft" align="right" valign="top"><a id="a016854cf78015c0a048f313488fb87a6" name="a016854cf78015c0a048f313488fb87a6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const Range &amp;range) const</td></tr>
+<tr class="memitem:a016854cf78015c0a048f313488fb87a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcv_1_1aruco_1_1IdentifyCandidatesParallel.html#a016854cf78015c0a048f313488fb87a6">operator()</a> (const Range &amp;range) const</td></tr>
 <tr class="separator:a016854cf78015c0a048f313488fb87a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >ParallelLoopBody class for the parallelization of the marker identification step Called from function _identifyCandidates() </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>skinny/src/zed_tracking/src/aruco.cpp</li>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5ea8eb64c32f52ea3263efe0dff721e1" name="a5ea8eb64c32f52ea3263efe0dff721e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ea8eb64c32f52ea3263efe0dff721e1">&#9670;&nbsp;</a></span>IdentifyCandidatesParallel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::aruco::IdentifyCandidatesParallel::IdentifyCandidatesParallel </td>
+          <td>(</td>
+          <td class="paramtype">const Mat *&#160;</td>
+          <td class="paramname"><em>_grey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputArrayOfArrays&#160;</td>
+          <td class="paramname"><em>_candidates</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputArrayOfArrays&#160;</td>
+          <td class="paramname"><em>_contours</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Dictionary *&#160;</td>
+          <td class="paramname"><em>_dictionary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; int &gt; *&#160;</td>
+          <td class="paramname"><em>_idsTmp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; char &gt; *&#160;</td>
+          <td class="paramname"><em>_validCandidates</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DetectorParameters *&#160;</td>
+          <td class="paramname"><em>_params</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a016854cf78015c0a048f313488fb87a6" name="a016854cf78015c0a048f313488fb87a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a016854cf78015c0a048f313488fb87a6">&#9670;&nbsp;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cv::aruco::IdentifyCandidatesParallel::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const Range &amp;&#160;</td>
+          <td class="paramname"><em>range</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>skinny/src/zed_tracking/src/<a class="el" href="aruco_8cpp.html">aruco.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

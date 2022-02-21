@@ -1,15 +1,8 @@
 var searchData=
 [
-  ['parsecurrent_0',['parseCurrent',['../classPowerDistributionPanel.html#a4b8db8aeb85b455da984cde08e98da9b',1,'PowerDistributionPanel']]],
-  ['parsefloat_1',['parseFloat',['../communication__node_8cpp.html#a1284893ca1a8f5a3466dd699a6e50405',1,'communication_node.cpp']]],
-  ['parseframe_2',['parseFrame',['../classPowerDistributionPanel.html#a1f377d1df81b350a14aae8c6a7b891c9',1,'PowerDistributionPanel']]],
-  ['parseint_3',['parseInt',['../communication__node_8cpp.html#a916bfd0d426e122b1d50f9697bf8f576',1,'communication_node.cpp']]],
-  ['parsevoltage_4',['parseVoltage',['../classPowerDistributionPanel.html#ac999e3d51768d689e0f1e7f168fddeee',1,'PowerDistributionPanel']]],
-  ['position_5',['Position',['../structPosition.html',1,'']]],
-  ['power_2emsg_6',['Power.msg',['../messages_2msg_2Power_8msg.html',1,'']]],
-  ['power_5fdistribution_5fpanel_5fnode_2ecpp_7',['power_distribution_panel_node.cpp',['../power__distribution__panel__node_8cpp.html',1,'']]],
-  ['powercallback_8',['powerCallback',['../communication__node_8cpp.html#a236d6a7ceebf3a57bdb5b41e7e849ed4',1,'communication_node.cpp']]],
-  ['powerdistributionpanel_9',['PowerDistributionPanel',['../classPowerDistributionPanel.html',1,'']]],
-  ['powerdistributionpanel_2ecpp_10',['PowerDistributionPanel.cpp',['../PowerDistributionPanel_8cpp.html',1,'']]],
-  ['printaddresses_11',['printAddresses',['../communication__node_8cpp.html#ab4762af4052183218509e9f8b695f8c2',1,'communication_node.cpp']]]
+  ['new_5fsocket_0',['new_socket',['../communication__node_8cpp.html#a4848332eecf4c58ee3b11a4f8513c3db',1,'communication_node.cpp']]],
+  ['newlaunch_1',['newLaunch',['../namespacenewLaunch.html',1,'']]],
+  ['newlaunch_2epy_2',['newLaunch.py',['../newLaunch_8py.html',1,'']]],
+  ['node_3',['node',['../classAutomation.html#a83548285e8d70d831d3629c7062fcce2',1,'Automation']]],
+  ['nodehandle_4',['nodeHandle',['../autonomy__node_8cpp.html#a4139548a0cb7d8e541599673553f489a',1,'nodeHandle():&#160;autonomy_node.cpp'],['../logic__node_8cpp.html#a4139548a0cb7d8e541599673553f489a',1,'nodeHandle():&#160;logic_node.cpp'],['../talon__node_8cpp.html#a4139548a0cb7d8e541599673553f489a',1,'nodeHandle():&#160;talon_node.cpp']]]
 ];

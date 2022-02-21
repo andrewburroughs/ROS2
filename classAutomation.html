@@ -69,6 +69,8 @@ $(function() {
   <div class="headertitle"><div class="title">Automation Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Automation_8hpp_source.html">Automation.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Automation:</div>
 <div class="dyncontent">
@@ -92,13 +94,12 @@ Collaboration diagram for Automation:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a123c8996de1d657d4d96e46aa23be673"><td class="memItemLeft" align="right" valign="top"><a id="a123c8996de1d657d4d96e46aa23be673" name="a123c8996de1d657d4d96e46aa23be673"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>automate</b> ()=0</td></tr>
+<tr class="memitem:a123c8996de1d657d4d96e46aa23be673"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#a123c8996de1d657d4d96e46aa23be673">automate</a> ()=0</td></tr>
 <tr class="separator:a123c8996de1d657d4d96e46aa23be673"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35d610ea56c94a7b96897a54144c0f1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#a35d610ea56c94a7b96897a54144c0f1f">setNode</a> (rclcpp::Node::SharedPtr node)</td></tr>
+<tr class="memitem:a35d610ea56c94a7b96897a54144c0f1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#a35d610ea56c94a7b96897a54144c0f1f">setNode</a> (rclcpp::Node::SharedPtr <a class="el" href="classAutomation.html#a83548285e8d70d831d3629c7062fcce2">node</a>)</td></tr>
 <tr class="memdesc:a35d610ea56c94a7b96897a54144c0f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets publisher node for left and right wheel motor speed.  <a href="classAutomation.html#a35d610ea56c94a7b96897a54144c0f1f">More...</a><br /></td></tr>
 <tr class="separator:a35d610ea56c94a7b96897a54144c0f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad216c05e7a24f9a7dc9216f5ffee173f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#ad216c05e7a24f9a7dc9216f5ffee173f">setPosition</a> (<a class="el" href="structPosition.html">Position</a> position)</td></tr>
+<tr class="memitem:ad216c05e7a24f9a7dc9216f5ffee173f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#ad216c05e7a24f9a7dc9216f5ffee173f">setPosition</a> (<a class="el" href="structPosition.html">Position</a> <a class="el" href="classAutomation.html#af7e8abe924ed8cb3a2ea800356dba519">position</a>)</td></tr>
 <tr class="memdesc:ad216c05e7a24f9a7dc9216f5ffee173f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets axis orientations and calls <a class="el" href="structEulerAngles.html">EulerAngles</a>.  <a href="classAutomation.html#ad216c05e7a24f9a7dc9216f5ffee173f">More...</a><br /></td></tr>
 <tr class="separator:ad216c05e7a24f9a7dc9216f5ffee173f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ee08cd555d8e86e37275ac28799b417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#a9ee08cd555d8e86e37275ac28799b417">changeSpeed</a> (float left, float right)</td></tr>
@@ -110,32 +111,49 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>automate</b> 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a00af6a2d8de72bdcdb67c9b3638f7167"><td class="memItemLeft" align="right" valign="top"><a id="a00af6a2d8de72bdcdb67c9b3638f7167" name="a00af6a2d8de72bdcdb67c9b3638f7167"></a>
-std::shared_ptr&lt; rclcpp::Publisher&lt; std_msgs::msg::Float32_&lt; std::allocator&lt; void &gt; &gt;, std::allocator&lt; void &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>driveLeftSpeedPublisher</b></td></tr>
+<tr class="memitem:a00af6a2d8de72bdcdb67c9b3638f7167"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; rclcpp::Publisher&lt; std_msgs::msg::Float32_&lt; std::allocator&lt; void &gt; &gt;, std::allocator&lt; void &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#a00af6a2d8de72bdcdb67c9b3638f7167">driveLeftSpeedPublisher</a></td></tr>
 <tr class="separator:a00af6a2d8de72bdcdb67c9b3638f7167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeffbf8e3199a78431180ac7a5de2ec82"><td class="memItemLeft" align="right" valign="top"><a id="aeffbf8e3199a78431180ac7a5de2ec82" name="aeffbf8e3199a78431180ac7a5de2ec82"></a>
-std::shared_ptr&lt; rclcpp::Publisher&lt; std_msgs::msg::Float32_&lt; std::allocator&lt; void &gt; &gt;, std::allocator&lt; void &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>driveRightSpeedPublisher</b></td></tr>
+<tr class="memitem:aeffbf8e3199a78431180ac7a5de2ec82"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; rclcpp::Publisher&lt; std_msgs::msg::Float32_&lt; std::allocator&lt; void &gt; &gt;, std::allocator&lt; void &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#aeffbf8e3199a78431180ac7a5de2ec82">driveRightSpeedPublisher</a></td></tr>
 <tr class="separator:aeffbf8e3199a78431180ac7a5de2ec82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83548285e8d70d831d3629c7062fcce2"><td class="memItemLeft" align="right" valign="top"><a id="a83548285e8d70d831d3629c7062fcce2" name="a83548285e8d70d831d3629c7062fcce2"></a>
-rclcpp::Node::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><b>node</b></td></tr>
+<tr class="memitem:a83548285e8d70d831d3629c7062fcce2"><td class="memItemLeft" align="right" valign="top">rclcpp::Node::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#a83548285e8d70d831d3629c7062fcce2">node</a></td></tr>
 <tr class="separator:a83548285e8d70d831d3629c7062fcce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7e8abe924ed8cb3a2ea800356dba519"><td class="memItemLeft" align="right" valign="top"><a id="af7e8abe924ed8cb3a2ea800356dba519" name="af7e8abe924ed8cb3a2ea800356dba519"></a>
-<a class="el" href="structPosition.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><b>position</b></td></tr>
+<tr class="memitem:af7e8abe924ed8cb3a2ea800356dba519"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPosition.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#af7e8abe924ed8cb3a2ea800356dba519">position</a></td></tr>
 <tr class="separator:af7e8abe924ed8cb3a2ea800356dba519"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2adc83228be8606d978d6cd9708a14b8"><td class="memItemLeft" align="right" valign="top"><a id="a2adc83228be8606d978d6cd9708a14b8" name="a2adc83228be8606d978d6cd9708a14b8"></a>
-<a class="el" href="structQuaternion.html">Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><b>orientationQuaternion</b></td></tr>
+<tr class="memitem:a2adc83228be8606d978d6cd9708a14b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structQuaternion.html">Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#a2adc83228be8606d978d6cd9708a14b8">orientationQuaternion</a></td></tr>
 <tr class="separator:a2adc83228be8606d978d6cd9708a14b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a517ab206884e9a958a821d7f23f92f7e"><td class="memItemLeft" align="right" valign="top"><a id="a517ab206884e9a958a821d7f23f92f7e" name="a517ab206884e9a958a821d7f23f92f7e"></a>
-<a class="el" href="structEulerAngles.html">EulerAngles</a>&#160;</td><td class="memItemRight" valign="bottom"><b>orientation</b></td></tr>
+<tr class="memitem:a517ab206884e9a958a821d7f23f92f7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEulerAngles.html">EulerAngles</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#a517ab206884e9a958a821d7f23f92f7e">orientation</a></td></tr>
 <tr class="separator:a517ab206884e9a958a821d7f23f92f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1eafbe0e6c95f5d0a2afb05558bf7b0"><td class="memItemLeft" align="right" valign="top"><a id="ac1eafbe0e6c95f5d0a2afb05558bf7b0" name="ac1eafbe0e6c95f5d0a2afb05558bf7b0"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>currentLeftSpeed</b> =0</td></tr>
+<tr class="memitem:ac1eafbe0e6c95f5d0a2afb05558bf7b0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#ac1eafbe0e6c95f5d0a2afb05558bf7b0">currentLeftSpeed</a> =0</td></tr>
 <tr class="separator:ac1eafbe0e6c95f5d0a2afb05558bf7b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a778217769e0771c339e37fc0062e0348"><td class="memItemLeft" align="right" valign="top"><a id="a778217769e0771c339e37fc0062e0348" name="a778217769e0771c339e37fc0062e0348"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>currentRightSpeed</b> =0</td></tr>
+<tr class="memitem:a778217769e0771c339e37fc0062e0348"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAutomation.html#a778217769e0771c339e37fc0062e0348">currentRightSpeed</a> =0</td></tr>
 <tr class="separator:a778217769e0771c339e37fc0062e0348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a123c8996de1d657d4d96e46aa23be673" name="a123c8996de1d657d4d96e46aa23be673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a123c8996de1d657d4d96e46aa23be673">&#9670;&nbsp;</a></span>automate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Automation::automate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9ee08cd555d8e86e37275ac28799b417" name="a9ee08cd555d8e86e37275ac28799b417"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9ee08cd555d8e86e37275ac28799b417">&#9670;&nbsp;</a></span>changeSpeed()</h2>
 
@@ -251,6 +269,119 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>currentRightSpeed</b
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>angles </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac1eafbe0e6c95f5d0a2afb05558bf7b0" name="ac1eafbe0e6c95f5d0a2afb05558bf7b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1eafbe0e6c95f5d0a2afb05558bf7b0">&#9670;&nbsp;</a></span>currentLeftSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Automation::currentLeftSpeed =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a778217769e0771c339e37fc0062e0348" name="a778217769e0771c339e37fc0062e0348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a778217769e0771c339e37fc0062e0348">&#9670;&nbsp;</a></span>currentRightSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Automation::currentRightSpeed =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a00af6a2d8de72bdcdb67c9b3638f7167" name="a00af6a2d8de72bdcdb67c9b3638f7167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00af6a2d8de72bdcdb67c9b3638f7167">&#9670;&nbsp;</a></span>driveLeftSpeedPublisher</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;rclcpp::Publisher&lt;std_msgs::msg::Float32_&lt;std::allocator&lt;void&gt; &gt;, std::allocator&lt;void&gt; &gt; &gt; Automation::driveLeftSpeedPublisher</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeffbf8e3199a78431180ac7a5de2ec82" name="aeffbf8e3199a78431180ac7a5de2ec82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeffbf8e3199a78431180ac7a5de2ec82">&#9670;&nbsp;</a></span>driveRightSpeedPublisher</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;rclcpp::Publisher&lt;std_msgs::msg::Float32_&lt;std::allocator&lt;void&gt; &gt;, std::allocator&lt;void&gt; &gt; &gt; Automation::driveRightSpeedPublisher</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83548285e8d70d831d3629c7062fcce2" name="a83548285e8d70d831d3629c7062fcce2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83548285e8d70d831d3629c7062fcce2">&#9670;&nbsp;</a></span>node</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Node::SharedPtr Automation::node</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a517ab206884e9a958a821d7f23f92f7e" name="a517ab206884e9a958a821d7f23f92f7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a517ab206884e9a958a821d7f23f92f7e">&#9670;&nbsp;</a></span>orientation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEulerAngles.html">EulerAngles</a> Automation::orientation</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2adc83228be8606d978d6cd9708a14b8" name="a2adc83228be8606d978d6cd9708a14b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2adc83228be8606d978d6cd9708a14b8">&#9670;&nbsp;</a></span>orientationQuaternion</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structQuaternion.html">Quaternion</a> Automation::orientationQuaternion</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7e8abe924ed8cb3a2ea800356dba519" name="af7e8abe924ed8cb3a2ea800356dba519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7e8abe924ed8cb3a2ea800356dba519">&#9670;&nbsp;</a></span>position</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structPosition.html">Position</a> Automation::position</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

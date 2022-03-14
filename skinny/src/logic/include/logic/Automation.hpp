@@ -9,6 +9,7 @@
  *
  *  @brief Header file for Automation class
  * 
+ *  @see src/Automation.cpp
  * */
 
 class Automation{
